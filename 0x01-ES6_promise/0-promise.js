@@ -1,12 +1,16 @@
-// 0-promise.js
-function getResponseFromAPI() {
-    return new Promise((resolve, reject) => {
-        // Simulate an API call with a timeout
-        setTimeout(() => {
-            // You can resolve with some data or reject with an error
-            resolve("API response data");
-        }, 1000); // Simulates a 1-second delay
-    });
-}
+// 1-promise.test.js
+import getFullResponseFromAPI from './1-promise';
 
-export default getResponseFromAPI;
+describe('getFullResponseFromAPI', () => {
+    it('should resolve with success message when success is true', async () => {
+        const response = await getFullResponseFromAPI(true);
+        expect(response).toEqual({
+            status: 200,
+            body: 'Success',
+        });
+    });
+
+    it('should reject with an error message when success is false', async () => {
+        await expect(getFullResponseFromAPI(false)).rejects.toThrow('The fake API is not working currently');
+    });
+});
