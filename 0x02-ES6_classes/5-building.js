@@ -1,9 +1,5 @@
 class Building {
   constructor(sqft) {
-    // Prevent direct instantiation of the abstract class
-    if (new.target === Building) {
-      throw new Error("Cannot instantiate abstract class Building");
-    }
     this._sqft = sqft;
   }
 
@@ -11,8 +7,9 @@ class Building {
     return this._sqft;
   }
 
+  // This method should be overridden by subclasses
   evacuationWarningMessage() {
-    throw new Error("Class extending Building must override evacuationWarningMessage");
+    throw new Error('Class extending Building must override evacuationWarningMessage');
   }
 }
 
