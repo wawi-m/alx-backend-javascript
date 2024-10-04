@@ -37,7 +37,7 @@ export class StudentHolberton {
 }
 
 // Create student instances
-const student1 = new StudentHolberton('Gume', 'Sa', class2020); 
+const student1 = new StudentHolberton('Gume', 'Sa', class2020);
 const student2 = new StudentHolberton('John', 'Doe', class2020);
 const student3 = new StudentHolberton('Albert', 'Clinton', class2019);
 const student4 = new StudentHolberton('Donald', 'Bush', class2019);
