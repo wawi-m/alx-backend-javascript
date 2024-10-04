@@ -1,15 +1,29 @@
-// 10-main.js
-import Car from './10-car.js';
+const _brand = Symbol('brand');
+const _motor = Symbol('motor');
+const _color = Symbol('color');
 
-class TestCar extends Car {}
+class Car {
+  constructor(brand, motor, color) {
+    this[_brand] = brand; // Use symbols to store attributes
+    this[_motor] = motor;
+    this[_color] = color;
+  }
 
-const tc1 = new TestCar('Nissan', 'Turbo', 'Pink');
-const tc2 = tc1.cloneCar();
+  get brand() {
+    return this[_brand];
+  }
 
-console.log(tc1);
-console.log(tc1 instanceof TestCar);
+  get motor() {
+    return this[_motor];
+  }
 
-console.log(tc2);
-console.log(tc2 instanceof TestCar);
+  get color() {
+    return this[_color];
+  }
 
-console.log(tc1 == tc2);
+  cloneCar() {
+    return new this.constructor(this[_brand], this[_motor], this[_color]);
+  }
+}
+
+export default Car;
