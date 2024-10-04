@@ -1,13 +1,12 @@
-const _brand = Symbol('brand');
-const _motor = Symbol('motor');
-const _color = Symbol('color');
-
+const _brand = ('brand');
+const _motor = ('motor');
+const _color = ('color');
 class Car {
-  constructor(brand, motor, color) {
-    this[_brand] = brand; // Use symbols to store attributes
-    this[_motor] = motor;
-    this[_color] = color;
-  }
+    constructor(brand, motor, color) {
+      this._brand = brand; // Use underscore for private attributes
+      this._motor = motor;
+      this._color = color;
+    }
 
   get brand() {
     return this[_brand];
