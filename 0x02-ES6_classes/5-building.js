@@ -1,21 +1,18 @@
 class Building {
   constructor(sqft) {
-    this.sqft = sqft; // Calls the setter for validation
+    // Prevent direct instantiation of the abstract class
+    if (new.target === Building) {
+      throw new Error("Cannot instantiate abstract class Building");
+    }
+    this._sqft = sqft;
   }
 
   get sqft() {
     return this._sqft;
   }
 
-  set sqft(value) {
-    if (typeof value !== 'number') {
-      throw new TypeError('Square footage must be a number');
-    }
-    this._sqft = value;
-  }
-
   evacuationWarningMessage() {
-    throw new Error('Class extending Building must override evacuationWarningMessage');
+    throw new Error("Class extending Building must override evacuationWarningMessage");
   }
 }
 
