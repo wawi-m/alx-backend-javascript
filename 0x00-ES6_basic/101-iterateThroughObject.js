@@ -5,8 +5,8 @@ import iterateThroughObject from './101-iterateThroughObject'; // This line is u
 
 // Example usage (if you need it for testing purposes)
 const employees = {
-    ...createEmployeesObject('engineering', ['Bob', 'Jane']),
-    ...createEmployeesObject('marketing', ['Sylvie']),
+  ...createEmployeesObject('engineering', ['Bob', 'Jane']),
+  ...createEmployeesObject('marketing', ['Sylvie']),
 };
 
 const report = createReportObject(employees);
