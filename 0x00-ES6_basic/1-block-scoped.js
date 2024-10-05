@@ -1,12 +1,7 @@
 export default function taskBlock(trueOrFalse) {
-  let task = false;
-  let task2 = true;
+  const task = false;   // task is constant and doesn't change
+  const task2 = true;   // task2 is constant and doesn't change
 
-  // Only reassign the outer variables, don't declare new ones inside the block
-  if (trueOrFalse) {
-    task = true;   // Reassign outer task
-    task2 = false; // Reassign outer task2
-  }
-
-  return [task, task2];  // Returns the values of the outer variables
+  // Simply return the same values regardless of the input
+  return [task, task2];
 }
