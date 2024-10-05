@@ -1,6 +1,6 @@
 const employees = {
-    ...createEmployeesObject('engineering', ['Bob', 'Jane']),
-    ...createEmployeesObject('marketing', ['Sylvie'])
+  ...createEmployeesObject('engineering', ['Bob', 'Jane']),
+  ...createEmployeesObject('marketing', ['Sylvie']),
 };
 
 const report = createReportObject(employees);
