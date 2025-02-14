@@ -1,15 +1,9 @@
-import createEmployeesObject from './11-createEmployeesObject';
-import createReportObject from './12-createReportObject';
-import createIteratorObject from './100-createIteratorObject';
-import iterateThroughObject from './101-iterateThroughObject'; // This line is unnecessary if this is the same file
+export default function iterateThroughObject(reportWithIterator) {
+  const employees = [];
 
-// Example usage (if you need it for testing purposes)
-const employees = {
-  ...createEmployeesObject('engineering', ['Bob', 'Jane']),
-  ...createEmployeesObject('marketing', ['Sylvie']),
-};
+  for (const employee of reportWithIterator) {
+    employees.push(employee);
+  }
 
-const report = createReportObject(employees);
-const reportWithIterator = createIteratorObject(report);
-
-console.log(iterateThroughObject(reportWithIterator));
+  return employees.join(' | ');
+}
