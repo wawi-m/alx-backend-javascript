@@ -1,7 +1,11 @@
 export default function taskBlock(trueOrFalse) {
-  const task = false;   // task is constant and doesn't change
-  const task2 = true;   // task2 is constant and doesn't change
+  const task = false;
+  const task2 = true;
 
-  // Simply return the same values regardless of the input
+  if (trueOrFalse) {
+    const task = true; // eslint-disable-line no-unused-vars
+    const task2 = false; // eslint-disable-line no-unused-vars
+  }
+
   return [task, task2];
 }
